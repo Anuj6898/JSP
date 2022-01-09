@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Audio Player</title>
+        <link rel="stylesheet" href="p2.css">
+        <script defer src="p2.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+                integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+                crossorigin="anonymous">
+</head>
+<body>
+       
+        <div class="music-container">
+                <figure class="music-img">
+                        <img id="song-cover" src="./picfiles/wakemeup.jpg" alt="">
+                </figure>
+                <div id="song-name" class="song-name">
+                        Wake Me Up
+                </div>
+                <div id="progress-container" class="progress-container">
+                        <div id="progress" class="progress"></div>
+                </div>
+                <div class="ctrl-btns">
+                        <audio id="audio" src="./audiofiles/BlindingLights.mp3"></audio>
+                        <button id="prev-song" class="prev-song"><i class="fas fa-step-backward"></i></button>
+                        <div class="play-pause">
+                                <button id="play-song" class="play-song"><i class="fas fa-play"></i></button>
+                                <button id="pause-song" class="pause-song"><i class="fas fa-pause"></i></button>
+                        </div>
+                        <button id="next-song" class="next-song"><i class="fas fa-step-forward"></i></button>
+                        
+                </div>
+                <div id="volume-container" class="volume-container">
+                        <!-- <i id="volume-btn" class="volume-btn fas fa-volume-up"></i> -->
+                        <div id="volume-progress" class="volume-progress"></div>
+                </div>
+        </div>
+</body>
+</html>
