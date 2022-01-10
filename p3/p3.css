@@ -1,0 +1,100 @@
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+:root{
+        --cell-size : 100px;
+        --mark-size : cal(var(--cell-size)* .9)
+}
+
+body{
+
+}
+.board{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        grid-template-columns: repeat(3,auto);
+}
+.cell{
+        width: var(--cell-size);
+        height: var(--cell-size);
+        border: 1px solid black;
+}
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+        border-top: none;
+}
+.cell:nth-child(3n + 1){
+        border-left:  none;
+}
+.cell:nth-child(3n + 3){
+        border-right:  none;
+}
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+        border-bottom: none;
+}
+.cell.x::after,
+.cell.x::before
+{
+        content: '';
+        position: absolute;
+        display: block;
+        height: 80px;
+        width:10px;
+        transform-origin: center;
+        transform: rotate(45deg) translate(40px,-20px);
+        background: black;
+}
+.cell.x::after
+{
+        transform: rotate(-45deg) translate(20px,40px);
+
+}
+.cell.o::before,
+.cell.o::after
+{
+        position: absolute;
+        content: '';
+        display: block;
+        transform: translate(10px,20px);
+        background: white;
+        height: 70px;
+        width:70px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px inset;
+}
+.winning-message{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(17, 17, 17, 0.486);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+.winning-message.hidden{
+        display: none;
+}
+.winning-message>button{
+        margin: 1rem;
+        padding: .5rem;
+        border-radius: 10px;
+        cursor: pointer;
+}
+.winning-message>div{
+        color: white;
+        font-size: 3rem;
+        font-weight: 800;
+}
